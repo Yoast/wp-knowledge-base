@@ -1,3 +1,16 @@
+This is a fork of [WP Knowledge Base by ibericode](https://github.com/ibericode/wp-knowledge-base).
+
+We've removed:
+
+* The code highlighting.
+* The breadcrumbs code.
+* The keywords taxonomy.
+
+We've changed:
+
+* The slug to be `/help/`.
+* The post type is now called `Help articles`.
+
 WP Knowledge Base
 =======
 
@@ -15,7 +28,6 @@ wpkb_search_form();
 wpkb_breadcrumbs();
 wpkb_table_of_contents( array( 'title' => 'In this article' ) );
 wpkb_category_list();
-wpkb_keyword_list();
 ```
 
 ### Settings

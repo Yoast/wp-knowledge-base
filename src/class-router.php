@@ -40,7 +40,7 @@ class Router {
 		}
 
 		// TODO: Add text-option for this
-		return defined( 'WPKB_POST_TYPE_SLUG' ) ? WPKB_POST_TYPE_SLUG : 'kb';
+		return defined( 'WPKB_POST_TYPE_SLUG' ) ? WPKB_POST_TYPE_SLUG : 'help';
 	}
 
 	/**
@@ -78,31 +78,9 @@ class Router {
 	 */
 	public function register() {
 		$labels = array(
-			'name'              => __( 'KB Keywords', 'wp-knowledge-base' ),
-			'singular_name'     => __( 'KB Keyword', 'wp-knowledge-base' ),
-			'menu_name'         => __( 'KB Keywords' )
-		);
-
-		// register docs taxonomy: keyword
-		register_taxonomy(
-			'wpkb-keyword',
-			'wpkb-article',
-			array(
-				'labels' => $labels,
-				'rewrite' => array(
-					'with_front' => false,
-					'slug' => $this->slug . '/keyword'
-				),
-				'hierarchical' => false,
-			)
-		);
-
-		register_taxonomy_for_object_type( 'wpkb-keyword', 'wpkb-article' );
-
-		$labels = array(
-			'name'              => __( 'KB Categories', 'wp-knowledge-base' ),
-			'singular_name'     => __( 'KB Category', 'wp-knowledge-base' ),
-			'menu_name'         => __( 'KB Categories' )
+			'name'              => __( 'Help categories', 'wp-knowledge-base' ),
+			'singular_name'     => __( 'Help category', 'wp-knowledge-base' ),
+			'menu_name'         => __( 'Help categories' )
 		);
 
 		// register docs taxonomy: category
@@ -124,12 +102,12 @@ class Router {
 
 
 		$labels = array(
-			'name'               => _x( 'KB Articles', 'post type general name', 'wp-knowledge-base' ),
-			'singular_name'      => _x( 'KB Article', 'post type singular name', 'wp-knowledge-base' ),
-			'new_item'           => __( 'New KB Article', 'wp-knowledge-base' ),
-			'update_item'        => __( 'Update KB Article', 'wp-knowledge-base' ),
-			'edit_item'          => __( 'Edit KB Article', 'wp-knowledge-base' ),
-			'add_new_item'       => __( 'Add new KB Article', 'wp-knowledge-base' )
+			'name'               => _x( 'Help articles', 'post type general name', 'wp-knowledge-base' ),
+			'singular_name'      => _x( 'Help article', 'post type singular name', 'wp-knowledge-base' ),
+			'new_item'           => __( 'New Help article', 'wp-knowledge-base' ),
+			'update_item'        => __( 'Update Help article', 'wp-knowledge-base' ),
+			'edit_item'          => __( 'Edit Help article', 'wp-knowledge-base' ),
+			'add_new_item'       => __( 'Add new Help article', 'wp-knowledge-base' )
 		);
 
 		// register docs post type
@@ -143,7 +121,7 @@ class Router {
 				'taxonomies' => array( 'wpkb-category', 'wpkb-keyword' ),
 				'has_archive' => true,
 				'menu_icon'   => 'dashicons-info',
-				'supports' => array( 'title', 'editor', 'author', 'revisions', 'custom-fields' ) //todo: finish migration to comments API & use that interface
+				'supports' => array( 'title', 'editor', 'author', 'revisions' ) //todo: finish migration to comments API & use that interface
 			)
 		);
 

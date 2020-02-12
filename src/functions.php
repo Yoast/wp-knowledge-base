@@ -36,13 +36,6 @@ function wpkb_article_list( $args ) {
 /**
  * @return string
  */
-function wpkb_keyword_list() {
-	return wpkb('keywords');
-}
-
-/**
- * @return string
- */
 function wpkb_category_list() {
 	return wpkb('categories');
 }
@@ -54,13 +47,6 @@ function wpkb_category_list() {
  */
 function wpkb_search_form( $args = array() ) {
 	return wpkb( 'search' )->form( $args );
-}
-
-/**
- * @return string
- */
-function wpkb_breadcrumbs() {
-	return wpkb( 'breadcrumbs' );
 }
 
 require_once __DIR__ . '/table-of-contents/functions.php';

@@ -8,9 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'WPKB\\Admin' => $baseDir . '/src/class-admin.php',
     'WPKB\\Article_List' => $baseDir . '/src/class-article-list.php',
-    'WPKB\\Breadcrumbs\\Crumbs' => $baseDir . '/src/breadcrumbs/class-crumbs.php',
     'WPKB\\Callouts' => $baseDir . '/src/callouts/class-callouts.php',
-    'WPKB\\CodeHighlighting' => $baseDir . '/src/code-highlighting/class-code-highlighting.php',
     'WPKB\\Options' => $baseDir . '/src/class-options.php',
     'WPKB\\Plugin' => $baseDir . '/src/class-plugin.php',
     'WPKB\\Rating\\Admin' => $baseDir . '/src/ratings/class-admin.php',

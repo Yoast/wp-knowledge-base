@@ -61,20 +61,10 @@ $router->add_hooks();
 
 $wpkb['plugin'] = $plugin = new Plugin( WPKB_VERSION, __FILE__, __DIR__ );
 $wpkb['categories'] = new Term_List( 'wpkb-category' );
-$wpkb['keywords'] = new Term_List( 'wpkb-keyword' );
 
 // search
 $wpkb['search'] = $search = new Search( $plugin );
 $search->add_hooks();
-
-// breadcrumbs
-$wpkb['breadcrumbs'] = function() use( $router ){
-	return new Breadcrumbs\Crumbs( $router->archive_page );
-};
-
-// code highlighting
-$highlighting = new CodeHighlighting( $plugin );
-$highlighting->add_hooks();
 
 // callout boxes
 $callouts = new Callouts();

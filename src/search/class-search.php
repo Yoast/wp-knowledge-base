@@ -237,10 +237,6 @@ class Search {
 		$params[] = '%%' . $original_term . '%%';
 		$params[] = '%%' . $original_term . '%%';
 
-		// query keywords
-		$string .= " OR ( wptt.taxonomy = 'wpkb-keyword' AND wpt.name LIKE '%s' )";
-		$params[] = '%%' . $original_term . '%%';
-
 		// query category
 		$string .= " OR ( wptt.taxonomy = 'wpkb-category' AND wpt.name LIKE '%s' )";
 		$params[] = '%%' . $original_term . '%%';
