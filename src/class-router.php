@@ -94,7 +94,8 @@ class Router {
 					'slug' => $this->slug . '/category'
 				),
 				'hierarchical' => true,
-				'query_var' => true
+				'query_var' => true,
+				'show_in_rest' => true,
 			)
 		);
 		register_taxonomy_for_object_type( 'wpkb-category', 'wpkb-article' );
@@ -121,7 +122,8 @@ class Router {
 				'taxonomies' => array( 'wpkb-category', 'wpkb-keyword' ),
 				'has_archive' => true,
 				'menu_icon'   => 'dashicons-info',
-				'supports' => array( 'title', 'editor', 'author', 'revisions' ) //todo: finish migration to comments API & use that interface
+				'supports' => array( 'title', 'editor', 'author', 'revisions' ), //todo: finish migration to comments API & use that interface
+				'show_in_rest' => true,
 			)
 		);
 
