@@ -40,13 +40,4 @@ function wpkb_category_list() {
 	return wpkb('categories');
 }
 
-/**
- * @param array $args
- *
- * @return string
- */
-function wpkb_search_form( $args = array() ) {
-	return wpkb( 'search' )->form( $args );
-}
-
 require_once __DIR__ . '/table-of-contents/functions.php';

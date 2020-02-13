@@ -11,11 +11,7 @@ return array(
     'WPKB\\Callouts' => $baseDir . '/src/callouts/class-callouts.php',
     'WPKB\\Options' => $baseDir . '/src/class-options.php',
     'WPKB\\Plugin' => $baseDir . '/src/class-plugin.php',
-    'WPKB\\Rating\\Admin' => $baseDir . '/src/ratings/class-admin.php',
-    'WPKB\\Rating\\Rater' => $baseDir . '/src/ratings/class-rater.php',
-    'WPKB\\Rating\\Rating' => $baseDir . '/src/ratings/class-rating.php',
     'WPKB\\Router' => $baseDir . '/src/class-router.php',
-    'WPKB\\Search' => $baseDir . '/src/search/class-search.php',
     'WPKB\\ServiceContainer' => $baseDir . '/src/class-service-container.php',
     'WPKB\\Term_List' => $baseDir . '/src/class-term-list.php',
 );

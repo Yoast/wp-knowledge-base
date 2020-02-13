@@ -3,8 +3,10 @@ This is a fork of [WP Knowledge Base by ibericode](https://github.com/ibericode/
 We've removed:
 
 * The code highlighting.
-* The breadcrumbs code.
-* The keywords taxonomy.
+* The breadcrumbs code (we use the Yoast SEO breadcrumbs).
+* The keywords taxonomy (we don't use it).
+* The rating code (we don't use it).
+* The search functionality (we use Algolia).
 
 We've changed:
 
@@ -24,8 +26,6 @@ This plugin provides you with a custom post type, some taxonomies and other usef
 
 ```php
 wpkb_article_list( array( 'category' => 'Getting Started', 'title' => 'Start here..' ) );
-wpkb_search_form();
-wpkb_breadcrumbs();
 wpkb_table_of_contents( array( 'title' => 'In this article' ) );
 wpkb_category_list();
 ```

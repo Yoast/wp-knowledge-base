@@ -62,23 +62,12 @@ $router->add_hooks();
 $wpkb['plugin'] = $plugin = new Plugin( WPKB_VERSION, __FILE__, __DIR__ );
 $wpkb['categories'] = new Term_List( 'wpkb-category' );
 
-// search
-$wpkb['search'] = $search = new Search( $plugin );
-$search->add_hooks();
-
 // callout boxes
 $callouts = new Callouts();
 $callouts->add_hooks();
-
-// article ratings
-$wpkb['ratings'] = $ratings = new Rating\Rater();
-$ratings->add_hooks();
 
 // load admin specific code
 if( is_admin() && ( ! defined( 'DOING_AJAX' ) || ! DOING_AJAX ) ) {
 	$admin = new Admin( $options );
 	$admin->add_hooks();
-
-	$rating_admin = new Rating\Admin( $ratings );
-	$rating_admin->add_hooks();
 }
