@@ -29,11 +29,11 @@ class Callouts {
 	 */
 	public function shortcode( $atts = array(), $content = '' ) {
 		$atts = shortcode_atts( $this->default_atts, $atts, self::SHORTCODE );
-		$content = '<div class="alert alert--' . $atts['type'] . '">';
-		$content .= $this->get_icon( $atts['type'] );
-		$content .= '<span class="alert__content">' . trim( $content ) . '</span>';
-		$content .= '</div>';
-		return $content;
+		$output = '<div class="alert alert--' . $atts['type'] . '">';
+		$output .= $this->get_icon( $atts['type'] );
+		$output .= '<span class="alert__content">' . trim( $content ) . '</span>';
+		$output .= '</div>';
+		return $output;
 	}
 
 	/**
