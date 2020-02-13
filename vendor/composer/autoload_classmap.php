@@ -6,10 +6,8 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'WPKB\\Admin' => $baseDir . '/src/class-admin.php',
     'WPKB\\Article_List' => $baseDir . '/src/class-article-list.php',
     'WPKB\\Callouts' => $baseDir . '/src/callouts/class-callouts.php',
-    'WPKB\\Options' => $baseDir . '/src/class-options.php',
     'WPKB\\Plugin' => $baseDir . '/src/class-plugin.php',
     'WPKB\\Router' => $baseDir . '/src/class-router.php',
     'WPKB\\ServiceContainer' => $baseDir . '/src/class-service-container.php',

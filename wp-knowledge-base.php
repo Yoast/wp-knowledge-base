@@ -43,7 +43,6 @@ if( ! function_exists( 'wpkb' ) ) {
 }
 
 // load constants, filters, actions & shortcodes
-require __DIR__ . '/src/default-actions.php';
 require __DIR__ . '/src/default-filters.php';
 require __DIR__ . '/src/shortcodes.php';
 
@@ -51,12 +50,8 @@ require __DIR__ . '/src/shortcodes.php';
 global $wpkb;
 
 $wpkb = wpkb();
-$wpkb['options'] = $options = new Options( 'wpkb', array(
-		'custom_archive_page_id' => 0
-	)
-);
 
-$router = new Router( $options->get( 'custom_archive_page_id', 0 ) );
+$router = new Router();
 $router->add_hooks();
 
 $wpkb['plugin'] = $plugin = new Plugin( WPKB_VERSION, __FILE__, __DIR__ );
@@ -65,9 +60,3 @@ $wpkb['categories'] = new Term_List( 'wpkb-category' );
 // callout boxes
 $callouts = new Callouts();
 $callouts->add_hooks();
-
-// load admin specific code
-if( is_admin() && ( ! defined( 'DOING_AJAX' ) || ! DOING_AJAX ) ) {
-	$admin = new Admin( $options );
-	$admin->add_hooks();
-}

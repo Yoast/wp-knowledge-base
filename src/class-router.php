@@ -9,38 +9,12 @@ class Router {
 	/**
 	 * @var string
 	 */
-	private $slug;
-
-	/**
-	 * @var null|\WP_Post
-	 */
-	public $archive_page;
+	private $slug = 'help';
 
 	/**
 	 * Types constructor.
-	 *
-	 * @param int $archive_page_id
 	 */
-	public function __construct( $archive_page_id = 0 ) {
-
-		if( $archive_page_id > 0 ) {
-			$this->archive_page = get_post( $archive_page_id );
-		}
-
-		$this->slug = $this->determine_base_slug();
-	}
-
-	/**
-	 * @return string
-	 */
-	public function determine_base_slug() {
-
-		if( $this->archive_page instanceof WP_Post ) {
-			return $this->archive_page->post_name;
-		}
-
-		// TODO: Add text-option for this
-		return defined( 'WPKB_POST_TYPE_SLUG' ) ? WPKB_POST_TYPE_SLUG : 'help';
+	public function __construct() {
 	}
 
 	/**
@@ -48,29 +22,6 @@ class Router {
 	 */
 	public function add_hooks() {
 		add_action( 'init', array( $this, 'register' ), 1 );
-
-		if( $this->archive_page instanceof WP_Post ) {
-			add_filter( 'request', array( $this, 'modify_post_type_archive_request') );
-		}
-	}
-
-	/**
-	 * @param array $query_vars
-	 *
-	 * @return array
-	 */
-	public function modify_post_type_archive_request( $query_vars ) {
-
-		// only trigger for KB post type archive (without additional args)
-		if( is_admin() || ! isset( $query_vars['post_type'] ) || $query_vars['post_type'] !== 'wpkb-article' || count( $query_vars ) > 1 ) {
-			return $query_vars;
-		}
-
-		return array(
-			'post_type' => 'page',
-			'page_id' => $this->archive_page->ID,
-			'pagename' => $this->archive_page->post_name,
-		);
 	}
 
 	/**
@@ -122,7 +73,7 @@ class Router {
 				'taxonomies' => array( 'wpkb-category', 'wpkb-keyword' ),
 				'has_archive' => true,
 				'menu_icon'   => 'dashicons-info',
-				'supports' => array( 'title', 'editor', 'author', 'revisions' ), //todo: finish migration to comments API & use that interface
+				'supports' => array( 'title', 'editor', 'author', 'revisions' ),
 				'show_in_rest' => true,
 			)
 		);
