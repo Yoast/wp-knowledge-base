@@ -1,5 +1,5 @@
 {
-    "name": "ibericode/wp-knowledge-base",
+    "name": "yoast/wp-knowledge-base",
     "description": "WordPress powered documentation.",
     "type": "wordpress-plugin",
     "license": "GPL-2.0-or-later",
