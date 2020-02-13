@@ -16,7 +16,7 @@
         "documentation"
     ],
     "support": {
-        "issues": "https://github.com/ibericode/wp-knowledge-base/issues"
+        "issues": "https://github.com/yoast/wp-knowledge-base/issues"
     },
     "require": {
         "php": ">=5.4.0",
